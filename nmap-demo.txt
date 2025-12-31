@@ -1,0 +1,125 @@
+# -sL: List Scan - simply lists targets to scan
+# Does not perform host discovery or port scanning
+#
+# -------------------------------------------------------------
+# -sn: Ping Scan - Disable Port Scan
+# Send host discovery probe
+# Useful network inventory and availability checks
+# --------------------------------------------------------------
+# -Pn: Treat all hosts as online
+# Directly perform port scanning without ping checks
+# Useful for detection when ICMP is block or hosts igonore pings
+# -------------------------------------------------------------
+# -PS = TCP SYN
+# -PA = TCP ACK
+# -PU = UDP
+# -PY = SCTP INIT
+# sudo nmap -PS80,443 <target>
+# -------------------------------------------------------------
+# -n/-R Never do DNS Resolution/Force DNS Resolution
+# -n = Disable DNS Resolution
+# -R = Force DNS Resolution
+# Useful for speeding up scans or ensuring name resolution
+# ------------------------------------------------------------
+# SCANNING TECHNIQUES
+# -sS: TCP SYN Scan (Stealth Scan)
+# Fast & Stealthy
+# Send SYN packets, w/o completing the TCP handshake
+# Require root privileges
+# A little harder to detect by IDS/IPS
+# -----------------------------------------------------------
+# -sT: TCP Connect Scan
+# Complete the full TCP handshake
+# Work with raw ssocket privileges (non-root)
+# Slower and easier to detect
+# ---------------------------------------------------------
+# -sA: TCP ACK Scan
+# Send TCPs with the ACK flag set (acting as an existing connection)
+# This scan technique does not try to establish a full TCP handshake
+# Helps to identify statefuls
+# Used for firewall rule mapping
+# -----------------------------------------------------------
+# -sW: TCP Window Scan
+# Similar to the ACK scan but it inspects the TCP window size
+# Some systems use different windows sizes for open vs. closed ports
+# Nmap uses this difference to infer the port state
+# ---------------------------------------------------------------
+# -sN: Null Scan
+# Send TCP packets without any flags set
+# Steathier than a SYN scan because it doesn't initiate the initial handshake
+# ----------------------------------------------------------------
+# -sF: FIN Scan
+# Send TCP Packets with the FIN flag set (normally used to close a connection
+# This slightly stealthier than the SYN scan
+# This scan does not complete a TCP handshake
+# ----------------------------------------------------------------
+# -sX: Xmas Scan
+# Send TCP packet with FIN, PSH, and URG set
+# Lights up like a XMas Tree
+# Stealthier than the SYN scans 
+# Does not complete the TCP handshake
+# Useful for firewall evasion and RFC compliance testing
+# -----------------------------------------------------------------------------------
+# -sI: Idle Scan (Zombie Host:probeport)
+# Uses a "zombie host" to send probes. Make scan appear as it comes from another host
+# Requires very specific systems and environment
+# Not useful for modern system
+# -----------------------------------------------------------------------------------
+# -sY: SCTP INIT Scan
+# Sends SCTP INIT chnks to probe open SCTP ports
+# Niche, can be used in Telcom systems
+# -----------------------------------------------------------------------------------
+# -sZ: SCTP Cookie-Echo Scan
+# Send SCTP COOKIE_ECHO chcnks after INIT handshake
+# Niche, telcom systems
+# -----------------------------------------------------------------------------------
+# -sO: IP Protocol Scan
+# Sends packets with varying protocol numbers and observer the response
+# Helps to identify non-standard or uncommon protocol running on the host
+# Useful for reconnaissance and protocol mapping
+# -----------------------------------------------------------------------------------
+# -b: FTP Bounce Scan (requiring an <FTP relay host
+# Rarely works today due to security patching
+# -----------------------------------------------------------------------------------
+# 	!!!!!!!!!!!!!!!Service and Version Detection!!!!!!!!!!!!!!!!!!!
+# -----------------------------------------------------------------------------------
+# -sV: Probe open ports to determine the service/version info
+# Provides detailed information 
+# Useful for vulnerability assessments
+# Useful for service mapping
+# -----------------------------------------------------------------------------------
+# --version-intensity <level>: Set from 0-9
+# Low intensity (0-2) Need quick results, not exhaustive version details
+# Medium intesity (3-6) Balanced
+# High intensity (7-9) Used when accuracy is critical (vulnerability assessments
+# -----------------------------------------------------------------------------------
+# --version-light: Limit to most likely probes
+# Same as --version-intensity 2 <target>
+# -----------------------------------------------------------------------------------
+# --version-all: Try everything or every probe
+# Same as --version-intensity 9 <target
+# -----------------------------------------------------------------------------------
+# --version-trace: Show detailed version scan activity
+# Commonly used for debugging
+# Displaying verbose output
+# -----------------------------------------------------------------------------------
+#            !!!!!!!!!!Controlling Name Resolution!!!!!!!!!!<<<<HAPPY NEW YEAR!!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
